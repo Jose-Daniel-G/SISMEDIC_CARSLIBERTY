@@ -20,9 +20,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //se hace de esta manera por la relación que hay entre la tabla doctor. y usuario
-        $doctor. = Doctor::with('user')->orderBy('id', 'desc')->get();
-        return view('doctor.index', compact('doctor.'));
+        //se hace de esta manera por la relación que hay entre la tabla doctor.doctores. y usuario
+        $doctores= Doctor::with('user')->orderBy('id', 'desc')->get();
+        return view('doctor.doctores.index', compact('doctores'));
     }
 
     /**
@@ -30,7 +30,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('.doctor.create');
+        return view('doctor.doctores.create');
     }
 
     /**
@@ -67,10 +67,10 @@ class DoctorController extends Controller
 
         $doctor->save();
 
-        //Asignamos el rol "doctor" a los doctor. registrados
+        //Asignamos el rol "doctor" a los doctor.doctores. registrados
         $usuario->assignRole('doctor');
 
-        return redirect()->route('doctor.index')
+        return redirect()->route('doctor.doctores.index')
         ->with('mensaje', 'Se registró el doctor de manera correcta')
         ->with('icono', 'success');
     }
@@ -81,7 +81,7 @@ class DoctorController extends Controller
     public function show($id)
     {
         $doctor = Doctor::findOrFail($id);
-        return view('.doctor.show', compact('doctor'));
+        return view('doctor.doctores.show', compact('doctores'));
     }
 
     /**
@@ -90,7 +90,7 @@ class DoctorController extends Controller
     public function edit($id)
     {
         $doctor = Doctor::with('user')->findOrFail($id);
-        return view('.doctor.edit', compact('doctor'));
+        return view('doctor.doctores.edit', compact('doctores'));
     }
 
     /**
@@ -127,14 +127,14 @@ class DoctorController extends Controller
 
         $usuario->save();
 
-        return redirect()->route('doctor.index')
+        return redirect()->route('doctor.doctores.index')
         ->with('mensaje', 'Se actualizó el doctor de manera correcta')
         ->with('icono', 'success');
     }
 
     public function confirmDelete($id){
         $doctor = Doctor::with('user')->findOrFail($id);
-        return view('.doctor.delete', compact('doctor'));
+        return view('doctor.doctores.delete', compact('doctores'));
     }
 
     public function destroy($id)
@@ -149,22 +149,22 @@ class DoctorController extends Controller
         //Después eliminamos al doctor
         $doctor->delete();
 
-        return redirect()->route('doctor.index')
+        return redirect()->route('doctor.doctores.index')
         ->with('mensaje', 'Se eliminó el doctor de la base de datos de manera correcta')
         ->with('icono', 'success');
     }
 
     public function reportes(){
-        return view('.doctor.reportes');
+        return view('doctor.doctores.reportes');
     }
 
     public function pdf(){
         #Consuta para traer el último registro de la configuración (datos de la clínica)
         $configuracion = Configuracione::latest()->first(); #esta consulta traé al último registro y a la vez el primero del último
 
-        $doctor. = Doctor::all();
+        $doctor= Doctor::all();
 
-        $pdf = \PDF::loadView('.doctor.pdf', compact('configuracion', 'doctor.'));
+        $pdf = \PDF::loadView('doctor.doctores.pdf', compact('configuracion', 'doctor.doctores.'));
 
             //Código para mostrar un pie de página con la fecha, la cántidad de páginas que tiene el reporte y el usuario que lo generó
             $pdf->output();

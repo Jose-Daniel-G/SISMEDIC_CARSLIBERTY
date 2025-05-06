@@ -51,6 +51,6 @@ Route::post('/historial/registrar/{clienteId}/{cursoId}', [HistorialCursoControl
 Route::get('/historial/completar/{clienteId}/{cursoId}', [HistorialCursoController::class, 'completarCurso']);
 Route::get('/historial/listar/{clienteId}', [HistorialCursoController::class, 'listarCursosCompletados']);
 // Route::get('/admin/profesores/reportes', [ProfesorController::class, 'reportes'])->name('admin.profesores.reportes');
-Route::get('/admin/doctor./pdf', [DoctorController::class, 'pdf'])->name('.doctor.pdf');//->middleware('auth','can:.doctor.pdf');
+Route::get('/admin/doctor/pdf', [DoctorController::class, 'pdf'])->name('doctor.pdf');//->middleware('auth','can:.doctor.pdf');
 
 

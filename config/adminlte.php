@@ -316,6 +316,71 @@ return [
                     'route' => 'admin.config.index',
                 ],
             ],
+        ],        [
+            'text' => 'SIS MEDICAL',
+            'icon' => 'fa-solid fa-house-medical',
+            'submenu' => [
+                [
+                    'text' => 'Pacientes',
+                    'icon' => 'fa-solid fa-wheelchair',
+                    'submenu' => [
+                        [
+                            'text' => 'Index',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.pacientes.index',
+                            'icon_color' => 'red',
+                        ],
+                        [
+                            'text' => 'Create',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.pacientes.create',
+                            'icon_color' => 'red',
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'Consultorios',
+                    'icon' => 'nav-icon fas fa-hospital', // ← corregido, `bi bi-hospital` no es compatible con Font Awesome
+                    'submenu' => [
+                        [
+                            'text' => 'Index',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.consultorios.index',
+                            'icon_color' => 'red',
+                        ],
+                        [
+                            'text' => 'Create',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.consultorios.create',
+                            'icon_color' => 'red',
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'Doctores',
+                    'icon' => 'nav-icon fas fa-heartbeat', // ← corregido, `bi bi-heart-pulse` no es de Font Awesome
+                    'submenu' => [
+                        [
+                            'text' => 'Index',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.index',
+                            'icon_color' => 'red',
+                        ],
+                        [
+                            'text' => 'Create',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.create',
+                            'icon_color' => 'red',
+                        ],
+                        [
+                            'text' => 'Reportes',
+                            'icon' => 'far fa-circle nav-icon',
+                            'route' => 'doctor.reportes',
+                            'icon_color' => 'red',
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         [
@@ -350,77 +415,7 @@ return [
                 ],
 
             ],
-        ],
-        ['header' => 'SIS MEDICAL', 'can' => 'admin.secretarias.index',],
-        [
-            'text'        => 'Pacientes',
-            'icon' => 'fa-solid fa-wheelchair',
-            // 'can'  => 'admin.asistencias.index',
-            'submenu' => [
-                [
-                    'text' => 'Index',
-                    'icon'        => 'far fa-circle nav-icon',
-                    'route' => 'doctor.pacientes.index',
-                    'icon_color' => 'red',
-                    // 'can' => 'doctor.pacientes.index',
-                ],
-                [
-                    'text' => 'Create',
-                    'icon'        => 'far fa-circle nav-icon',
-                    'route' => 'doctor.pacientes.create',
-                    'icon_color' => 'red',
-                    // 'can' => 'doctor.list_inacistencias',
-
-                ],
-
-            ],
-        ],        [
-            'text'        => 'Consultorios',
-            'icon' => 'nav-icon fas bi bi-hospital',
-            // 'can'  => 'admin.asistencias.index',
-            'submenu' => [
-                [
-                    'text' => 'Index',
-                    'icon'        => 'far fa-circle nav-icon',
-                    'route' => 'doctor.consultorios.index',
-                    'icon_color' => 'red',
-                    // 'can' => 'doctor.consultorios.index',
-                ],
-                [
-                    'text' => 'Create',
-                    'icon'        => 'far fa-circle nav-icon',
-                    'route' => 'doctor.consultorios.create',
-                    'icon_color' => 'red',
-                    // 'can' => 'doctor.list_inacistencias',
-
-                ],
-
-            ],
-        ],
-        [
-            'text'        => 'doctor.',
-            'icon' => 'nav-icon fas bi bi-heart-pulse',
-            // 'can'  => 'admin.asistencias.index',
-            'submenu' => [
-                [
-                    'text' => 'Index',
-                    'icon'        => 'far fa-circle nav-icon',
-                    'route' => 'doctor.index',
-                    'icon_color' => 'red',
-                    // 'can' => 'doctor.index',
-                ],
-                [
-                    'text' => 'Create',
-                    'icon'        => 'far fa-circle nav-icon',
-                    'route' => 'doctor.create',
-                    'icon_color' => 'red',
-                    // 'can' => 'doctor.list_inacistencias',
-
-                ],
-
-            ],
-        ],
-
+        ],    
         ['header' => 'ADMINISTRADOR', 'can' => 'admin.secretarias.index',],
         [
             'text' => 'Programador',

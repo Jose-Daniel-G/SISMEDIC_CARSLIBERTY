@@ -39,7 +39,7 @@
         </thead>
         <tbody>
             <? $contador = 1;?>
-            @foreach ($doctor. as $doctor)
+            @foreach ($doctor.as $doctor)
                 <tr>
                     <td class="text-center">{{ $contador++ }}</td>
                     <td>{{ $doctor->apellidos }}</td>

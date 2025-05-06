@@ -33,14 +33,14 @@ Route::delete('consultorios/{id}', [ConsultorioController::class, 'destroy'])->n
 
 
 //Rutas para el admin - doctor.
-Route::get('doctor.', [DoctorController::class, 'index'])->name('doctor.index');//;//->middleware('auth','can:doctor.index');
-Route::get('doctor./create', [DoctorController::class, 'create'])->name('doctor.create');//;//->middleware('auth','can:dmin.doctor.create');
-Route::post('doctor./create', [DoctorController::class, 'store'])->name('doctor.store');//;//->middleware('auth','can:doctor.store');
-Route::get('doctor./reportes', [DoctorController::class, 'reportes'])->name('doctor.reportes');//;//->middleware('auth','can:doctor.reportes');
-Route::get('doctor./pdf', [DoctorController::class, 'pdf'])->name('doctor.pdf');//;//->middleware('auth','can:doctor.pdf');
-Route::get('doctor./{id}', [DoctorController::class, 'show'])->name('doctor.show');//;//->middleware('auth','can:doctor.show');
-Route::get('doctor./{id}/edit', [DoctorController::class, 'edit'])->name('doctor.edit');//;//->middleware('auth','can:doctor.edit');
-Route::put('doctor./{id}', [DoctorController::class, 'update'])->name('doctor.update');//;//->middleware('auth','can:doctor.update');
-Route::get('doctor./{id}/confirm-delete', [DoctorController::class, 'confirmDelete'])->name('doctor.confirmDelete');//;//->middleware('auth','can:doctor.confirmDelete');
-Route::delete('doctor./{id}', [DoctorController::class, 'destroy'])->name('doctor.destroy');//;//->middleware('auth','can:doctor.destroy');
+Route::get('doctor', [DoctorController::class, 'index'])->name('doctor.index');//;//->middleware('auth','can:doctor.index');
+Route::get('doctor/create', [DoctorController::class, 'create'])->name('doctor.create');//;//->middleware('auth','can:dmin.doctor.create');
+Route::post('doctor/create', [DoctorController::class, 'store'])->name('doctor.store');//;//->middleware('auth','can:doctor.store');
+Route::get('doctor/reportes', [DoctorController::class, 'reportes'])->name('doctor.reportes');//;//->middleware('auth','can:doctor.reportes');
+Route::get('doctor/pdf', [DoctorController::class, 'pdf'])->name('doctor.pdf');//;//->middleware('auth','can:doctor.pdf');
+Route::get('doctor/{id}', [DoctorController::class, 'show'])->name('doctor.show');//;//->middleware('auth','can:doctor.show');
+Route::get('doctor/{id}/edit', [DoctorController::class, 'edit'])->name('doctor.edit');//;//->middleware('auth','can:doctor.edit');
+Route::put('doctor/{id}', [DoctorController::class, 'update'])->name('doctor.update');//;//->middleware('auth','can:doctor.update');
+Route::get('doctor/{id}/confirm-delete', [DoctorController::class, 'confirmDelete'])->name('doctor.confirmDelete');//;//->middleware('auth','can:doctor.confirmDelete');
+Route::delete('doctor/{id}', [DoctorController::class, 'destroy'])->name('doctor.destroy');//;//->middleware('auth','can:doctor.destroy');
 
